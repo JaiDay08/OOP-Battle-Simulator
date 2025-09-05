@@ -12,7 +12,7 @@ class boss_baby(Enemy):
 
     def attack(self): 
         if self.health < 10: 
-            self.attack_power = self.health * 5
+            self.attack_power = self.health * 10
             print("Big Boss is MAAAAAAAAD!!!!!!!!!")
         
 

@@ -1,6 +1,8 @@
 import random
-from goblin import Goblin
 from hero import Hero
+from goblin import Goblin
+from enemy import Enemy 
+
 
 def main():
     print("Welcome to the Battle Arena!")
@@ -10,7 +12,7 @@ def main():
     hero = Hero("Aragorn")
 
     # Create goblins ༼ ºل͟º ༽ ༼ ºل͟º ༽ ༼ ºل͟º ༽
-    goblins = [Goblin(f"Goblin {i+1}") for i in range(3)]
+    goblins = [Enemy(f"Goblin {i+1}") for i in range(3)]
 
     # Keep track of how many goblins were defeated
     defeated_goblins = 0

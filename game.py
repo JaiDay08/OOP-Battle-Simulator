@@ -2,6 +2,7 @@ import random
 from hero import Hero
 from goblin import Goblin
 from enemy import Enemy 
+from boss import boss_baby
 
 
 def main():
@@ -41,12 +42,27 @@ def main():
 
     # Determine outcome
     if hero.is_alive():
-        print(f"\nThe hero has defeated all the goblins! ༼ ᕤ◕◡◕ ༽ᕤ")
+        print(f"\nThe hero has defeated all the goblins! BOSS TIME!!!!!! ༼ ᕤ◕◡◕ ༽ᕤ")
     else:
         print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
 
+    if hero.is_alive(): 
+        hero.health =  hero.health + 400
+        print(f"The hero's health is now {hero.health}")
+        baby_man = boss_baby("babyMan", "blue")
+        print("\Level Up: BOSS ROUND")
+        while hero.is_alive() and baby_man.is_alive(): 
+            damage = hero.strike()
+            baby_man.take_damage(damage)
+
+            damage = baby_man.attack()
+            hero.receive_damage(damage) 
+         if hero.is_alive
+    
+
     # Final tally of goblins defeated
     print(f"\nTotal goblins defeated: {defeated_goblins} / {len(goblins)}")
+    
 
 if __name__ == "__main__":
     main()
